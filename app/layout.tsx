@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ibrahim Babatunde Folaranmi | Mechanical Engineer & Project Manager",
-  description: "Official portfolio of Ibrahim Babatunde Folaranmi. Officer II Mechanical Engineer at NSPM. Specialist in industrial maintenance and project management.",
+  title: "Ibrahim Babatunde Folaranmi | Mechanical Engineer",
+  description: "Official portfolio of Ibrahim Babatunde Folaranmi. Mechanical Engineer at NSPM and Project Management professional.",
   openGraph: {
-    title: "Ibrahim Babatunde Folaranmi | Engineering Portfolio",
-    description: "Expertise in Mechanical Engineering & Project Management.",
-    url: "https://ibrahim-babatunde-portfolio.vercel.app/",
-    siteName: "IB Folaranmi Portfolio",
+    title: "Ibrahim Babatunde Folaranmi | Portfolio",
+    description: "Mechanical Engineer & Project Manager specializing in industrial operations.",
+    url: "https://ibrahim-babatunde-portfolio.vercel.app",
+    siteName: "Ibrahim Folaranmi Portfolio",
     images: [
       {
-        url: "/assets/images/1001971690(1).jpg",
+        url: "/assets/images/1001971690(1).jpg", 
         width: 1200,
         height: 630,
+        alt: "Ibrahim Babatunde Folaranmi",
       },
     ],
     locale: "en_US",
@@ -28,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
