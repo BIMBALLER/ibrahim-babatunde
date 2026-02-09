@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ibrahim Babatunde Folaranmi | Portfolio",
+    description: "Mechanical Engineer & Project Management Professional",
+    images: ["/assets/images/1001971690(1).jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -28,8 +34,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className="antialiased bg-[#030014] text-slate-300">
+        {children}
+      </body>
     </html>
   );
 }
