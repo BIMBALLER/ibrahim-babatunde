@@ -38,10 +38,8 @@ export default function IbrahimPortfolio() {
       
       {/* --- AESTHETIC BACKGROUND ELEMENTS --- */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        {/* Base dark layer */}
         <div className="absolute inset-0 bg-[#030014]" />
         
-        {/* Animated Purple Orb */}
         <motion.div 
           animate={{
             scale: [1, 1.2, 1],
@@ -51,7 +49,6 @@ export default function IbrahimPortfolio() {
           className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] rounded-full bg-purple-900/40 blur-[120px]" 
         />
         
-        {/* Animated Indigo Orb */}
         <motion.div 
           animate={{
             scale: [1.2, 1, 1.2],
@@ -61,10 +58,8 @@ export default function IbrahimPortfolio() {
           className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-indigo-900/40 blur-[120px]" 
         />
         
-        {/* Blue Accent Orb */}
         <div className="absolute top-[20%] right-[10%] w-[40%] h-[40%] rounded-full bg-blue-900/30 blur-[100px]" />
 
-        {/* Tactical Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1b3d_1px,transparent_1px),linear-gradient(to_bottom,#1f1b3d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
       </div>
 
