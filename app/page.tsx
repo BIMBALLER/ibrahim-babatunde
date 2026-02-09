@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Settings, Briefcase, GraduationCap, Mail, MapPin, Award, ChevronRight, FileText, Phone, Zap, Heart } from 'lucide-react';
+import { Settings, Briefcase, Mail, MapPin, Award, ChevronRight, FileText, Phone, Zap, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // --- DATA FROM YOUR CV ---
@@ -41,19 +41,13 @@ export default function IbrahimPortfolio() {
         <div className="absolute inset-0 bg-[#030014]" />
         
         <motion.div 
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 10, repeat: Infinity }}
           className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] rounded-full bg-purple-900/40 blur-[120px]" 
         />
         
         <motion.div 
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.2, 0.4],
-          }}
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.2, 0.4] }}
           transition={{ duration: 15, repeat: Infinity }}
           className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-indigo-900/40 blur-[120px]" 
         />
