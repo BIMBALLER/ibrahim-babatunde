@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Settings, Briefcase, Mail, MapPin, Award, ChevronRight, FileText, Phone, Zap, Heart } from 'lucide-react';
+import { Settings, Briefcase, Mail, MapPin, Award, ChevronRight, FileText, Phone, Zap, Heart, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // --- DATA FROM YOUR CV ---
@@ -32,10 +32,31 @@ const PROFESSIONAL_EXPERIENCE = [
 export default function IbrahimPortfolio() {
   const cvPath = `/assets/docs/${encodeURIComponent("My CV IB.pdf")}`;
   const imagePath = `/assets/images/${encodeURIComponent("1001971690(1).jpg")}`;
+  
+  // Contacts
+  const whatsappNumber = "2347056901212"; // Format: CountryCode + Number
+  const callingNumber = "08149381720";
 
   return (
     <main className="min-h-screen bg-[#030014] text-slate-300 font-sans selection:bg-purple-500/30 overflow-x-hidden text-left relative">
       
+      {/* --- WHATSAPP FLOATING POPUP --- */}
+      <motion.a
+        href={`https://wa.me/${whatsappNumber}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        className="fixed bottom-8 right-8 z-[100] bg-green-500 text-white p-4 rounded-full shadow-2xl shadow-green-500/40 flex items-center justify-center group"
+      >
+        <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20 group-hover:hidden"></div>
+        <MessageCircle size={28} fill="currentColor" className="relative z-10" />
+        <span className="absolute right-full mr-4 bg-white text-green-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
+          Chat on WhatsApp
+        </span>
+      </motion.a>
+
       {/* --- AESTHETIC BACKGROUND ELEMENTS --- */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[#030014]" />
@@ -106,12 +127,13 @@ export default function IbrahimPortfolio() {
                <span className="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-[10px] font-bold text-slate-400 flex items-center gap-2 uppercase tracking-tighter shadow-sm">
                  <MapPin size={14} className="text-purple-500" /> Abuja, Nigeria
                </span>
-               <span className="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-[10px] font-bold text-slate-400 flex items-center gap-2 uppercase tracking-tighter shadow-sm">
+               <a href="mailto:Pholaranmiib@yahoo.com" className="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-[10px] font-bold text-slate-400 flex items-center gap-2 uppercase tracking-tighter shadow-sm hover:text-white transition-colors">
                  <Mail size={14} className="text-purple-500" /> Pholaranmiib@yahoo.com
-               </span>
-               <span className="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-[10px] font-bold text-slate-400 flex items-center gap-2 uppercase tracking-tighter shadow-sm">
-                 <Phone size={14} className="text-purple-500" /> 07056901212
-               </span>
+               </a>
+               {/* Clickable Mobile Number */}
+               <a href={`tel:${callingNumber}`} className="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-[10px] font-bold text-slate-400 flex items-center gap-2 uppercase tracking-tighter shadow-sm hover:text-white transition-colors group">
+                 <Phone size={14} className="text-purple-500 group-hover:scale-110 transition-transform" /> {callingNumber}
+               </a>
             </div>
           </div>
           
@@ -209,9 +231,10 @@ export default function IbrahimPortfolio() {
             <a href="mailto:Pholaranmiib@yahoo.com" className="bg-white text-purple-900 px-12 py-6 rounded-full font-black text-[11px] uppercase tracking-[0.3em] hover:scale-105 transition-all shadow-xl w-full sm:w-auto">
               Send Me A Mail
             </a>
-            <div className="px-10 py-6 bg-black/20 backdrop-blur-md rounded-full font-black text-[11px] uppercase tracking-[0.3em] border border-white/20 w-full sm:w-auto text-white">
-              07056901212
-            </div>
+            {/* Direct Call Button */}
+            <a href={`tel:${callingNumber}`} className="px-10 py-6 bg-black/20 backdrop-blur-md rounded-full font-black text-[11px] uppercase tracking-[0.3em] border border-white/20 w-full sm:w-auto text-white hover:bg-black/40 transition-all flex items-center justify-center gap-3">
+              <Phone size={14} className="text-purple-400" /> {callingNumber}
+            </a>
           </div>
         </div>
       </section>
